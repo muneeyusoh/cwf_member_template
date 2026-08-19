@@ -64,7 +64,7 @@
         <small class="opacity-90 d-block fw-bold">ยอดสมทบสะสมแล้ว</small>
         <h3 class="fw-bold mb-0 text-white"><span id="dashTotalContrib">0</span> <span style="font-size: 1.1rem; font-weight: normal;">฿</span></h3>
       </div>
-      <div style="font-size: 2.5rem; opacity: 0.8;"><i class="fa-solid fa-piggy-bank"></i></div>
+      <div style="font-size: 2.5rem; opacity: 0.8;"><i class="fa-solid fa-coins"></i></div>
     </div>
     <div class="outstanding-text">
       <i class="fa-solid fa-circle-exclamation me-1"></i> ยอดที่ต้องสมทบ: <span id="debtText" class="fs-5">0</span> บาท
@@ -125,9 +125,7 @@
 </div>
 
 <script>
-  // ==========================================================
-  // ⚙️ ตั้งค่าระบบ (CONFIG) - สำหรับแม่พิมพ์ (Template)
-  // ==========================================================
+  // ⚠️ ตั้งค่า API URL ตรงนี้
   const CWF_CONFIG = {
       FUND_NAME: "เทศบาลตำบลสุคิริน", 
       LIFF_ID: "2010764982-BltKP85l", 
@@ -135,7 +133,6 @@
       CENTERS: ["ศูนย์ชุมชนปารีย์", "ศูนย์ชุมชนเกียร์", "ศูนย์ชุมชนราษฎร์สามัคคี", "ศูนย์ชุมชนกลันตัน", "ศูนย์ชุมชนมาโมง", "ศูนย์ชุมชนสุคิริน"],
       VILLAGES: ["บ้านจารังตาดง", "บ้านมาโมง", "บ้านภูเขาทอง", "บ้านปารีย์", "บ้านเกียร์", "บ้านราษฎร์สามัคคี", "บ้านกลันตัน", "บ้านสุคิริน", "อื่นๆ"]
   };
-  // ==========================================================
 
   let maxAllowed = 0;
   let userCenter = "";
@@ -143,7 +140,6 @@
   let dynamicCommitteeList = [];
 
   document.addEventListener("DOMContentLoaded", async () => {
-    // นำค่า FUND_NAME ไปใส่บน Header อัตโนมัติ
     const headerTitle = document.getElementById('headerFundName');
     if(headerTitle) headerTitle.innerText = `${CWF_CONFIG.FUND_NAME} จังหวัดนราธิวาส`;
 
